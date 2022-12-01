@@ -91,4 +91,18 @@ public class UserRegistration {
         else
             System.out.println("Password must have atleast one uppercase letter");
     }
+
+    public static void validPasswordRule3() {
+        System.out.print("Enter Password Rule3 : ");
+        String passwordRule3 = scanner.nextLine();
+        String regex = "^(?=.*[A-z])(?=.*[0-9])([a-zA-Z0-9@._-]).{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(passwordRule3);
+        boolean result = matcher.matches();
+
+        if (result)
+            System.out.println("Password Rule3 is valid");
+        else
+            System.out.println("Password must have atleast one numeric number");
+    }
 }
