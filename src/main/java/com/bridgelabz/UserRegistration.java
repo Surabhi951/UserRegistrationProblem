@@ -1,136 +1,79 @@
 package com.bridgelabz;
 
-import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserRegistration {
 
-    public static final Scanner scanner = new Scanner(System.in);
-
-    public static void validFirstName() {
-        System.out.print("Enter the First Name : ");
-        String name = scanner.next();
+    public static boolean validFirstName(String name) {
         String regex = "^[A-Z]{1}[a-z]{2,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(name);
         boolean result = matcher.matches();
-
-        if (result)
-            System.out.println("First name is valid");
-        else
-            System.out.println("First name is Invalid");
+        System.out.println(result);
+        return result;
     }
 
-    public static void validLastName() {
-        System.out.print("Enter the Last Name : ");
-        String name = scanner.next();
+    public static boolean validLastName(String name) {
         String regex = "^[A-Z]{1}[a-z]{2,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(name);
         boolean result = matcher.matches();
-
-        if (result)
-            System.out.println("Last name is valid");
-        else
-            System.out.println("Last name is Invalid");
+        System.out.println(result);
+        return result;
     }
 
-    public static void validEmail() {
-        System.out.print("Enter Email : ");
-        String email = scanner.next();
+    public static boolean validEmail(String email) {
         String regex = "^[a-z]*.[a-z]+@[a-z]+.[a-z]{2,3}(.[a-z]{2})*$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(email);
         boolean result = matcher.matches();
-
-        if (result)
-            System.out.println("Email is valid");
-        else
-            System.out.println("Email is Invalid");
+        System.out.println(result);
+        return result;
     }
 
-    public static void validMobileNumber() {
-        System.out.print("Enter Mobile Number : ");
-        String mobileNo = scanner.nextLine();
+    public static boolean validMobileNumber(String mobileNo) {
         String regex = "^[\\d]{2}\\s[\\d]{10}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(mobileNo);
         boolean result = matcher.matches();
-
-        if (result)
-            System.out.println("Mobile Number is valid");
-        else
-            System.out.println("Mobile Number is Invalid");
+        System.out.println(result);
+        return result;
     }
 
-    public static void validPasswordRule1() {
-        System.out.print("Enter Password Rule1 : ");
-        String passwordRule1 = scanner.nextLine();
+    public static boolean validPasswordRule1(String passwordRule1) {
         String regex = "^[A-Za-z0-9@._-]{8,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(passwordRule1);
         boolean result = matcher.matches();
-
-        if (result)
-            System.out.println("Password Rule1 is valid");
-        else
-            System.out.println("Password must have 8 character");
+        System.out.println(result);
+        return result;
     }
 
-    public static void validPasswordRule2() {
-        System.out.print("Enter Password Rule2 : ");
-        String passwordRule2 = scanner.nextLine();
+    public static boolean validPasswordRule2(String passwordRule2) {
         String regex = "^[A-Z]{1}[A-Za-z0-9@._-]{7,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(passwordRule2);
         boolean result = matcher.matches();
-
-        if (result)
-            System.out.println("Password Rule2 is valid");
-        else
-            System.out.println("Password must have atleast one uppercase letter");
+        System.out.println(result);
+        return result;
     }
 
-    public static void validPasswordRule3() {
-        System.out.print("Enter Password Rule3 : ");
-        String passwordRule3 = scanner.nextLine();
+    public static boolean validPasswordRule3(String passwordRule3) {
         String regex = "^(?=.*[A-z])(?=.*[0-9])([a-zA-Z0-9@._-]).{8,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(passwordRule3);
         boolean result = matcher.matches();
-
-        if (result)
-            System.out.println("Password Rule3 is valid");
-        else
-            System.out.println("Password must have atleast one numeric number");
+        System.out.println(result);
+        return result;
     }
 
-    public static void validPasswordRule4() {
-        System.out.print("Enter Password Rule4 : ");
-        String passwordRule4 = scanner.nextLine();
+    public static boolean validPasswordRule4(String passwordRule4) {
         String regex = "^(?=.*[A-z])(?=.*[0-9])(?=.*[@#$%^&*()-+=])([a-zA-Z0-9@._-]).{8,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(passwordRule4);
         boolean result = matcher.matches();
-
-        if (result)
-            System.out.println("Password Rule4 is valid");
-        else
-            System.out.println("Password must has exactly one special character");
-    }
-
-    public static void validEmailSamples() {
-        System.out.print("Enter Email Sample : ");
-        String emailSample = scanner.nextLine();
-        String regex = "^(?!.*@.*@)[a-z+_-]+(.[a-z0-9])*@[a-z0-9]+(.[a-z])*.[a-z]{2,}$";
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(emailSample);
-        boolean result = matcher.matches();
-
-        if (result)
-            System.out.println("Email sample is valid");
-        else
-            System.out.println("Email sample is invalid");
+        System.out.println(result);
+        return result;
     }
 }
