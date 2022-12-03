@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class UserRegistrationMain {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InvalidFirstNameException, InvalidLastNameException, InvalidEmailException, InvalidMobileNumberException, InvalidPasswordRule1Exception, InvalidPasswordRule2Exception, InvalidPasswordRule3Exception, InvalidPasswordRule4Exception {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the options:\n1. Validate First Name\n2. Validate Last Name\n3. Validate Email ID\n4. Validate Mobile Number\n5. Validate Password Rule1\n6. Validate Password Rule2\n7. Validate Password Rule3\n8. Validate Password Rule4");
         switch (scanner.nextInt()){
